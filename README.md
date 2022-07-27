@@ -66,3 +66,18 @@ Curso de Fundamentos de TypeScript
   ```
   npm init -y
   ```
+
+## Atrapando bugs
+  El análisis de código estático nos ayudará a detectar fallas en nuestro programa durante su desarrollo.
+
+  En la carpeta src del proyecto de curso, vamos a crear un archivo JavaScript llamado demo.js.
+
+  Al analizarlo nos damos cuenta de que tiene unos errores que podrían pasar desapercibidos al no ver advertencias. Es hasta que lo ejecutamos en un navegador web o entornos como NodeJS que los bugs saldrán a relucir. Por lo que, nosotros como desarrolladores, esto no es conveniente, pues queremos feedback lo más pronto posible.
+
+  ### Activando poderes de TypeScript en JavaScript 🧐
+
+  Si estás en Visual Studio Code, puedes activar el analizador de código estático de TypeScript sobre un archivo JavaScript. Para esto, en la primera línea del archivo debe ir lo siguiente:
+  ```
+  //@ts-check --no-eslint
+  ```
+
