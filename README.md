@@ -41,3 +41,28 @@ Curso de Fundamentos de TypeScript
   - Pruebas Unitarias (Unit Tests): se realiza pruebas para verificar si una parte del código hace lo que queremos que ejecute
   - Pruebas de Integración (Integration Tests): vemos como todo el código funciona en conjunto y que se ejecute cómo deseamos
   - Revisión de código (Code Review): se verifica si se ha seguido con las normas, estándares y mejores prácticas establecidas por el equipo
+
+## Configurado nuestro proyecto
+  No vamos a instalar TypeScript de manera global, sino solo para el proyecto, ya que normalmente así se hace en mundo real. Se trabaja por proyecto.
+
+  Instalar TypeScript en un proyecto es muy fácil:
+  ```
+  npm install typescript --save-dev
+  npx tsc --version
+  ```
+  A continuación, puede ejecutar el compilador de TypeScript con uno de los siguientes comandos: 
+  ```
+  npx tsc
+  tsc --help
+  tsc --version
+  tsc --init
+  ```
+  Nuestro .gitignore incluye el archivo .tsconfig.json, que es el archivo que se usa para configurar el compilador. [gitignore.io](https://www.toptal.com/developers/gitignore/)
+  
+  .editorconfig es un archivo que se usa para configurar el editor de texto. [editorconfig.org](https://editorconfig.org/)
+  Podemos usarlo dentro de Visual Studio Code [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+
+  Iniciamos un proyecto con NPM:
+  ```
+  npm init -y
+  ```
