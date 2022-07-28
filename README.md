@@ -118,3 +118,48 @@ Curso de Fundamentos de TypeScript
 
   [Deno](https://deno.land/), del mismo creador de Node.js, es un nuevo entorno de ejecución para JavaScript que puede correr también nativamente TypeScript. Sin embargo, aún no tiene la madurez en el ecosistema de Node.js
 
+## Veamos el TSConfig.json
+  Nos ayuda a ahorrar mucho trabajo manual como transpilar archivo por archivo, indicar el target, etc.
+
+  ### Creando un archivo TSConfig.json
+  En la terminal, ubicándonos dentro del directorio en el que queremos que se cree el archivo, ejecutemos:
+  ```
+  npx tsc --init
+  ```
+  Nos creará automáticamente el archivo con propiedades básicas activadas. Si deseas ver el archivo, puedes hacerlo desde la terminal con:
+  ```
+  cat tsconfig.json
+  ```
+  ![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/tsconfigjson1light.png)
+
+  Dentro del archivo TSConfig.json podemos ver que tiene muchas propiedades comentadas (desactivadas) y de las cuales solo algunas están activadas.
+
+  ### Compilación en TypeScript
+  Nuestro código TypeScript se transpilará según las propiedades indicadas en nuestro archivo `TSConfig.json``:
+  ```
+  npx tsc
+  ```
+
+  ### Compilación en tiempo real
+  Nos puede resultar tedioso estar ejecutando el comando anterior siempre después de escribir nuestro código. Para evitar esto, podemos hacer que el compilador esté detectando cada cambio que realicemos en nuestros archivos TypeScript y haga la transpilación de inmediato:
+  ```
+  npx tsc --watch
+  ```
+
+  ### Proyecto
+  - Creemos el archivo TSConfig.json en nuestro proyecto
+  - Activamos las siguientes propiedades dentro de dicho archivo:
+    - outDir: indicando la carpeta dist como el directorio destino de los archivos transpilados
+    ![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/tsconfig2l.png)
+    - rootDir: indicamos que nuestros archivos TypeScript, los cuales serán “compilados” luego, estarán en la carpeta src
+    ![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/tsconfig3l.png)
+  - Creamos el archivo 02-demo2.ts dentro de la carpeta src con el siguiente código:
+  ```
+  const numbers = [1,3,4];
+  ```
+  - Probemos la compilación de nuestros archivos:
+  ```
+  npx tsc
+  ```
+  ![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/tsconfig4l.png)
+  Observaremos que los archivos transpilados se encuentran en nuestra carpeta dist.
