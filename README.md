@@ -80,4 +80,41 @@ Curso de Fundamentos de TypeScript
   ```
   //@ts-check --no-eslint
   ```
+## El compilador de TypeScript
+  El código TS no es leído por navegadores ni servidores. Lo que se hace es transpilarlo a JS.
+
+  Podemos seleccionar una versión en específico de TS e indicar en dónde queremos que guarde el archivo JS
+
+  Este compilador lo que realmente hace es transpilar, pues ni el navegador ni Node.js (a abril de 2022) pueden leer nativamente archivos TypeScript, por lo que realiza un proceso de traducción en la que su código lo convierte a JavaScript.
+  ![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/ctf-8.jpg)
+
+  Compilación de archivos TypeScript desde Node.js
+
+  Para realizar el proceso de transpilación en Node.js, ejecutemos lo siguiente en la terminal:
+  ```
+  npx tsc archivo_typescript.ts
+  ```
+
+  Tras esto, se creará un archivo JavaScript dentro de la misma carpeta donde este tu archivo TypeScript y con el mismo nombre. Por ejemplo, en nuestro proyecto realizamos esa operación dentro de la carpeta src con el archivo 01-hello.ts, dando como resultado
+  ![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/ctf-9.jfif)
+
+  ### Compilación a una versión específica
+
+  Podemos hacer que nuestro archivo TypesSript sea transpilado a un archivo JavaScript, por ejemplo, con el estándar ECMAScript 6. Para ello ejecutemos:
+  ```
+  npx tsc archivo_typescript.ts --target es6
+  ```
+  ### Enviando compilación a una carpeta
+
+  Si deseas que los archivos transpilados no se generen en la misma carpeta donde están tus archivos TypeScript, puedes indicarle al compilador hacia donde quieres que vayan:
+  ```
+  npx tsc archivo_typescript.ts --target es6 --outDir carpeta_destino
+  ```
+  También podrías indicar que deseas aplicar la anterior operación a todos los archivos con extensión TypeScript:
+  ```
+  npx tsc *.ts --target es6 --outDir carpeta_destino
+  ```
+  ### Deno: un entorno nativo para ambos lenguajes
+
+  [Deno](https://deno.land/), del mismo creador de Node.js, es un nuevo entorno de ejecución para JavaScript que puede correr también nativamente TypeScript. Sin embargo, aún no tiene la madurez en el ecosistema de Node.js
 
