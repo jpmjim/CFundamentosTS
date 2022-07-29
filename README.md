@@ -346,3 +346,45 @@ Curso de Fundamentos de TypeScript
   `;
   ```
 
+## Arrays
+  Es una colección de datos ordenada. Los definimos de la siguiente manera:
+  ``` typescript
+  let prices = [1,2,3,4,5];
+
+  /* Método Push para agregar un elemento al final del array */
+  prices.push(6);
+  console.log(prices); // [1,2,3,4,5,6]
+  ```
+  Para el array prices, TypeScript, de no indicarle explícitamente, va a inferir que este solo contendrá valores del tipo number, por lo que si se quiere agregar un valor string, por ejemplo, nos indicará un error:
+  ``` typescript
+  prices.push("texto"); //ERROR. Se espera agregar solo números al array.
+  ```
+  Esto debido a que en su inicialización se le asignó un array que solo contenía números.
+
+  También nos indicará error si pretendemos hacer operaciones exclusivas de un tipo de dato sobre la de otro tipo:
+  ``` typescript
+  let meses = ["Mayo","Junio","Julio"];
+  meses.map( item => item * 2 ); //ERROR. Se pretende realizar una multiplicación usando strings.
+  ```
+
+  ### Tipado de arrays en TypeScript
+  Lo puedes definir así:
+  
+  - Indicar explícitamente los tipos de datos que almacenará el array:
+  ``` typescript
+  let prices: (number | string)[] = ["hola",2,4,6,"mundo"];
+  let otherPrices: (boolean | number)[];
+  ```
+
+  Para este caso, a menos que la variable sea una constante, no es necesario que inicialices la variable, pues ya le indicaste el tipo de dato.
+
+  - En la inicialización de la variable, colocar datos con el tipo de dato que quieres que soporte tu array en adelante para que lo pueda inferir TypeScript:
+  ``` typescript
+  let prices = ["hola",2,4,6,"mundo"];
+  // "hola", "mundo" => string
+  // 2,4,6 => number
+  ```
+  Dejamos claro que queremos que soporte los tipos de dato string y number.
+
+
+
