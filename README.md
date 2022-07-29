@@ -282,3 +282,10 @@ Curso de Fundamentos de TypeScript
   let myNumber: number = 20; // Buena practica.
   let otherNumber: Number = 20; // Mala practica.
   ```
+## Booleans
+  Este tipo de dato puede tomar dos valores: true o false.
+  ``` typescript
+  let isEnable: boolean = true;
+  let isNew = false;
+  ```
+  
