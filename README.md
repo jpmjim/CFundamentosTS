@@ -505,3 +505,56 @@ Curso de Fundamentos de TypeScript
   let myString: string | undefined = undefined;
   myString = "Hola TypeScript";
   ```
+
+## Funciones
+  Las funciones son nativas de JavaScript y esencialmente funcionan igual en TypeScript. Sin embargo, este último, con su sistema de tipado, nos ayudará a llevar a cabo una implementación más segura:
+  - Podemos definir que los argumentos de la función tengan un determinado tipo de dato (o más de uno si se usa Union Types):
+  ```typescript
+  type Sizes = 'S' | 'M' | 'L' | 'XL'; //Alias y Tipos Literales
+
+  function createProductJson(
+      title: string,
+      createdAt: Date,
+      stock: number,
+      size: Sizes
+  ){
+    return {
+          title,
+          createdAt,
+          stock,
+          size
+      }
+  }
+  ```
+  En el argumento createdAt se indica que es de tipo Date en alusión al objeto Date propio de JavaScript y no a un tipo de dato como string o number. Son diferentes las definiciones.
+  - Cuando hagamos uso de nuestra función, TypeScript comprobará que le envíes todos los parámetros en orden y con el tipo de dato que se declaró en la función:
+  ```typescript
+  const producto1 = createProductJson(
+    "titulo",
+    new Date('10/10/3030'),
+    30,
+    'M'
+  )
+  ```
+  ![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/ts10l.png)
+
+  En Visual Studio Code, si dejas el cursor sobre el nombre de la función que vas a invocar, te mostrará un mensaje con los detalles de la función, lo que espera como parámetros y lo que devolverá indicando además el orden y el tipo de dato de cada variable.
+  - Si queremos que un argumento sea opcional de enviar, podemos usar el modificador ? junto al nombre del argumento:
+  ```typescript
+  type Sizes = 'S' | 'M' | 'L' | 'XL'; //Alias y Tipos Literales
+
+  function createProductJson(
+      title: string,
+      createdAt: Date,
+      stock?: number,
+      size?: Sizes
+  ){
+      /*Código de la función*/
+  }
+  ```
+  Nota: cuando definamos argumentos opcionales en una función, estas deben ubicarse al final, si no TypeScript nos indicará un **error, ya que podría haber confusiones al momento de invocar la función y enviar los respectivos parámetros:
+  ```typescript
+  function randomFunc(title: string, amount?: number){} //CORRECTO
+
+  function otherFunc(title?: string, amount: number){} // ERROR
+  ```
