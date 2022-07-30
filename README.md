@@ -480,3 +480,28 @@ Curso de Fundamentos de TypeScript
       console.log(`Tu medida es ${userSize}`);
   }
   ```
+
+## Null y Undefined
+  Estos dos funcionan como dos tipos de datos, al igual que, por ejemplo, string o number.
+
+  El tipo de datonull es para indicar un valor nulo y undefined para algo indefinido. Son tipos diferentes.
+
+  ### Null y Undefined como tipo Any
+  En TypeScript, si no especificamos que va a ser null o undefined, estos son inferidos como tipo any:
+  ```typescript
+  let myVar = null; //Tipo any
+  let otherVar = undefined; //Tipo any
+
+  let myNull: null = null; // Tipo null
+  let myUndefined: undefined = undefined; //Tipo undefined
+  ```
+
+  ### Union Types como emergencia
+  Hay casos en la que queremos que una variable sea de tipo string o number y que al inicializarlas sean de tipo null o undefined para luego asignarles un valor del tipo de dato de los primeros mencionados. En este contexto podríamos usar los Union Types:
+  ```typescript
+  let myNumber: number | null = null;
+  myNumber = 50;
+
+  let myString: string | undefined = undefined;
+  myString = "Hola TypeScript";
+  ```
