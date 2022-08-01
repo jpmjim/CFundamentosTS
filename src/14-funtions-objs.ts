@@ -28,8 +28,8 @@
     stock: 12
   });
   addProduct({
-    title: 'Pro1',
-    createdAt: new Date(1993, 1, 1),
+    title: 'Pro2',
+    createdAt: new Date(2022, 1, 1),
     stock: 12,
     size: 'XL'
   });
