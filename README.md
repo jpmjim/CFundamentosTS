@@ -673,3 +673,32 @@ Curso de Fundamentos de TypeScript
 
   ### Nota
   Si es un módulo TypeScript lo que estamos importando, es importante que en la ruta de los import figure la extensión .ts de dicho archivo. Si es un archivo JavaScript, colocar la extensión .js es opcional.
+
+## Usando librerías que soportan TypeScript
+  Las librerías que tienen soporte para TypeScript nos facilitan su uso, y más aún si usas editores de código que se integran bien con este “lenguaje”, pues brindan información muy útil como indicar:
+  - La cantidad de parámetros esperados por una función
+  - El tipo de datos de los parámetros y variables
+  - El tipo de dato que retornará la función
+  - Autocompletado al usar métodos de un módulo
+  - Mejores prácticas
+
+  ### Instalando librerías
+  [date-fns](https://date-fns.org/)
+  ```bash
+  npm install date-fns
+  ```
+  Si quieren ejecutar un archivo de TS sin sin traspilarlo en la consola pueden instalar la extensión en vscode Code Runner además e tener instalado en su proyecto local la biblioteca typescript, para que Code Runner funcione on TS deben instalar de forma global la bilioteca ts-node, para instalarlo de forma global deben ejecutar el siguiente comando en su consola:
+  ```bash
+  npm install -D typescript
+  npm install -D ts-node
+  ```
+  Or globally with TypeScript.
+  ```bash
+  npm install -g typescript
+  npm install -g ts-node
+  ```
+  Depending on configuration, you may also need these
+  ```bash
+  npm install -D tslib @types/node
+  ```
+
