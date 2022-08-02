@@ -702,3 +702,13 @@ Curso de Fundamentos de TypeScript
   npm install -D tslib @types/node
   ```
 
+## Usando librerías que NO soportan TypeScript
+  El ecosistema de TypeScript ha creado unos módulos para agregar manualmente el tipado a las librerías que no tienen soporte de tipos.
+
+  Por ejemplo, si quieres trabajar con la librería lodash, en Visual Studio Code se te indicará que instales un sistema de tipos para que puedas desarrollar sin problemas desde TypeScript:
+  ```bash
+  npm install @types/lodash
+  npm i --save lodash
+  ```
+
+  ![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/lodash-tiny.png)
